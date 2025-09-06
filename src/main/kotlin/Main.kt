@@ -1,11 +1,11 @@
 fun main() {
     println("Введите строку:")
     val inputString = readLine() ?: ""
-    val result = compressString(inputString)
+    val result = cstring(inputString)
     println(result)
 }
 
-fun compressString(input: String): String {
+fun cstring(input: String): String {
     if (input.isEmpty()) {
         return ""
     }
