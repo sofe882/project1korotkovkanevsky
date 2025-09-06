@@ -12,23 +12,23 @@ fun cstring(input: String): String {
 
     val result = StringBuilder()
     var count = 1
-    var currChar = input[0]
+    var currchar = input[0]
 
     for (i in 1 until input.length) {
-        if (input[i] == currChar) {
+        if (input[i] == currchar) {
             count++
         } else {
-            result.append(currChar)
+            result.append(currchar)
             if (count > 1) {
                 result.append(count)
             }
-            currChar = input[i]
+            currchar = input[i]
             count = 1
         }
     }
 
 
-    result.append(currChar)
+    result.append(currchar)
     if (count > 1) {
         result.append(count)
     }
