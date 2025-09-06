@@ -1,7 +1,37 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    println("Введите строку:")
+    val inputString = readLine() ?: ""
+    val result = compressString(inputString)
+    println(result)
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun compressString(input: String): String {
+    if (input.isEmpty()) {
+        return ""
+    }
+
+    val result = StringBuilder()
+    var count = 1
+    var currentChar = input[0]
+
+    for (i in 1 until input.length) {
+        if (input[i] == currentChar) {
+            count++
+        } else {
+            result.append(currentChar)
+            if (count > 1) {
+                result.append(count)
+            }
+            currentChar = input[i]
+            count = 1
+        }
+    }
+
+
+    result.append(currentChar)
+    if (count > 1) {
+        result.append(count)
+    }
+
+    return result.toString()
 }
